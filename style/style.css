@@ -1,0 +1,186 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template: "hamburguesa logo buscador nombre mensajes notificaciones perfil" ;
+    width: 100%;
+    height: 100px;
+    background-color: #000E78;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+#nombre_alumno{
+    grid-area: "nombre";
+    color: white;
+}
+
+#buscador {
+    grid-area: "buscador";
+    border-radius: 30px;
+    width: 880px;
+    height: 59px;
+}
+
+#buscador:focus{
+    outline: none;
+}
+
+#logo{
+    grid-area: "logo";
+    float: left
+}
+
+#hamburguesa{
+    grid-area: "hamburguesa";
+    float: left
+}
+
+#icono_mensajes{
+    grid-area: "mensajes";
+    float: left;
+
+}
+
+#icono_notificaciones{
+    grid-area: "notificaciones";
+    float: left;
+}
+
+#perfil{
+    grid-area: "perfil";
+    border-radius: 50%;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
