@@ -2,21 +2,110 @@
 <html lang="en">
 
 <head>
-    <title>dadadad</title>
+    <title>Universidad Carlos III</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <!-- <link rel="icon" href="images/icon.jpg" type="image/jpg" sizes="16x16">  -->
 </head>
 
+<body>
+    <header>
+        <!--barra de navegacion-->
+        <nav id="navegation-bar">
+            <!--buscador en la barra de navegacion-->
+            <div id="navegation-search">
+                <a><img id="hambuguesa" src="images/hamburguesa.png" alt="Icono de la hambuguesa"></a>
+                <a><img id="logo" src="images/logo.png" alt="Logo"></a>
+                <input id="buscador">
+                <p id="nombre_alumno">Daniel Garcia Barroso</p>
+                <a><img id="icono_mensajes" src="images/mensajes.png" alt="Iconos de los mensajes"></a>
+                <a><img id="icono_notificaciones" src="images/campana.png" alt="Icono de las notificaciones"></a>
+                <a><img id="perfil" src="images/DNI.jpg" alt="Icono del perfil"></a>
+            </div>
+            <!--asignaturas en la barra de navegacion-->
+            <div id="navegation-subjects">
+                <a onclick="showElement('interfaces');" class="navegation">Interfaces de usuario</a>
+                <a onclick="showElement('arquitectura');" class="navegation">Arquitectura de computadores</a>
+                <a onclick="showElement('heuristica');" class="navegation">Heuristica y optimizacion</a>
+                <a onclick="showElement('redes');" class="navegation">Redes de ordenadores</a>
+                <a onclick="showElement('software');" class="navegation">Ingenieria del software</a>
+            </div>
+        </nav>
+    </header>
 
-<header>
-    <a><img id="hambuguesa" src="images/hamburguesa.png" alt="Icono de la hambuguesa"></a>
-    <a><img id="logo" src="images/logo.png" alt="Logo"></a>
-    <input id="buscador">
-    <p id="nombre_alumno"> Nombre del Alumno</p>
-    <a><img id="icono_mensajes" src="images/mensajes.png" alt="Iconos de los mensajes"></a>
-    <a><img id="icono_notificaciones" src="images/campana.png" alt="Icono de las notificaciones"></a>
-    <a><img id="perfil" src="images/DNI.jpg" alt="Icono del perfil"></a>
-</header>
+    <!--bloque principal de la web-->
+    <div style="display: none;">
+        <!--inicio de sesion y registro-->
+        <div class="frame">
+            <!--botones inicio de sesion y registro-->
+            <div class="nav">
+                <ul class "links">
+                    <li class="signin-active"><a class="btn">INICIAR SESIÓN</a></li>
+                    <li class="signup-inactive"><a class="btn">REGISTRARSE</a></li>
+                </ul>
+            </div>
+
+            <div ng-app ng-init="checked = false">
+                <!--inicio de sesion-->
+                <form class="form-signin" action="" method="post" name="form">
+                    <label for="email">Correo electrónico</label>
+                    <input class="form-styling" type="text" name="username" placeholder="" />
+                    <label for="password">Contraseña</label>
+                    <input class="form-styling" type="password" name="password" placeholder="" />
+                    <div class="btn-animate">
+                        <a class="btn-signin">Iniciar sesión</a>
+                    </div>
+                </form>
+
+                <!--registro-->
+                <form class="form-signup" action="" method="post" name="form">
+                    <label for="username">Nombre de usuario *</label>
+                    <input class="form-styling" type="text" name="username" placeholder="Nombre de usuario" />
+                    <label for="nia">NIA *</label>
+                    <input class="form-styling" type="text" name="nia" pattern="100+[0-9]{6}" placeholder="Tiene que seguir el formato 100XXXXXX" />
+                    <label for="password">Introduzca la contraseña *</label>
+                    <input class="form-styling" type="password" name="password" placeholder="Números, mayúsculas y minusculas. No puede ser mayor de 8 dígitos." />
+
+                    <label for="fullname">Nombre y apellidos *</label>
+                    <input class="form-styling" type="text" name="fullname" placeholder="Nombre y apellidos" />
+                    <label for="email">Correo electrónico *</label>
+                    <input class="form-styling" type="text" name="email" placeholder="Introduzca un correo electrónico válido" />
+                    <label for="date">Fecha de nacimiento *</label>
+                    <input class="form-styling" type="text" name="date" placeholder="Tiene que seguir el siguiente formato dd/mm/aaaa" />
+                    <label for="dni">DNI/NIF *</label>
+                    <input class="form-styling" type="text" name="dni" placeholder="Introduzca tu DNI" />
+                    <label for="rol">Rol *</label>
+                    <select class="form-styling" name="rol" style="color: white; background-color: rgb(80, 80, 80)">
+                        <option disabled selected value> -- Selecciona un rol -- </option>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="profesor">Profesor</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                    <div id="student-form">
+                        <select class="form-styling" for="student-degree" style="color: white; background-color: rgb(80, 80, 80)">
+                            <option disabled selected value> -- Selecciona un grado -- </option>
+                            <option value="informatica">Grado en Ingenieria Informatica</option>
+                            <option value="mecanica">Grado en Ingenieria Mecanica</option>
+                            <option value="industrial">Grado en Ingenieria Industrial</option>
+                            <option value="quimica">Grado en Ingenieria Quimica</option>
+                            <option value="electrica">Grado en Ingenieria Electrica</option>
+                            <option value="biomedica">Grado en Ingenieria Biomedica</option>
+                        </select>
+                    </div>
+                    <label for="language">Idioma</label>
+                    <select class="form-styling" for="language" style="color: white; background-color: rgb(80, 80, 80)">
+                        <option disabled selected value> -- Selecciona un idioma -- </option>
+                        <option value="informatica">Español</option>
+                        <option value="mecanica">Inglés</option>
+                    </select>
+                    <label for="university">Universidad</label>
+                    <input class="form-styling" type="text" name="university" readonly disabled value="Universidad Carlos III Madrid" placeholder="" />
+                    <label><input type="checkbox" value="" id="iveread">  He leído y acepto las Condiciones de uso</label>
+                    <a class="btn-signup">Registrarse</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>
